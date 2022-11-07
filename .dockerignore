@@ -1,0 +1,14 @@
+.git/
+.vscode/
+.idea/
+*.iml
+.gitignore
+
+src
+pom.xml
+template.yaml
+
+target/
+out/
+!target/*.jar
+!out/*.jar
