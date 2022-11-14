@@ -1,11 +1,11 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tap-harbor.vm-metaage.lab/tap-tkgm/apps/validation-v1')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tap-harbor.vm-metaage.lab/tap-tkgm/apps/validation-v1-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
 APP_NAME = 'validation-v1'
 
 k8s_custom_deploy(
    APP_NAME,
-   apply_cmd="tanzu apps workload apply -f config/workload.yaml --live-update" +
+   apply_cmd="tanzu apps workload apply -f config/workload.yaml --debug --live-update" +
        " --local-path " + LOCAL_PATH +
        " --source-image " + SOURCE_IMAGE +
        " --namespace " + NAMESPACE +
