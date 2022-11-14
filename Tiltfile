@@ -1,4 +1,4 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tap-harbor.vm-metaage.lab/tap-tkgm/apps/validation-v1-default')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tap-harbor.vm-metaage.lab/tap-tkgm/apps/validation-v1-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
 APP_NAME = 'validation-v1'
