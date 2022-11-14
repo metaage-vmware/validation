@@ -18,6 +18,11 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### DotNet ###
+bin/
+obj/
+publish/
+
 ### STS/Eclipse ###
 .apt_generated
 .classpath
@@ -29,9 +34,11 @@ build/
 
 ### VS Code ###
 .vscode/
-*.code-workspace
 
-### IntelliJ IDEA ###
+### Visual Studio ###
+.vscode/
+
+### JetBrains ###
 .idea/
 out/
 *.iws

@@ -1,11 +1,11 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
+  name: validation-v1
+  namespace: default
   labels:
     app.kubernetes.io/part-of: validation-v1
     apps.tanzu.vmware.com/workload-type: web
-  name: validation-v1
-  namespace: default
 spec:
   params:
     - name: debug
@@ -16,6 +16,6 @@ spec:
       memory: 512Mi
   source:
     git:
+      url: https://github.com/metaage-vmware/validation.git
       ref:
         branch: master
-      url: https://github.com/metaage-vmware/validation.git
