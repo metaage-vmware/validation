@@ -1,10 +1,11 @@
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='tap-harbor.vm-metaage.lab/tap-tkgm/apps/validation-v1')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
+APP_NAME = 'validation-v1'
 
 k8s_custom_deploy(
-   'APP-NAME',
-   apply_cmd="tanzu apps workload apply -f PATH-TO-WORKLOAD-YAMl --live-update" +
+   APP_NAME,
+   apply_cmd="tanzu apps workload apply -f config/workload.yaml --live-update" +
        " --local-path " + LOCAL_PATH +
        " --source-image " + SOURCE_IMAGE +
        " --namespace " + NAMESPACE +
@@ -18,5 +19,5 @@ k8s_custom_deploy(
    ]
 )
 
-k8s_resource('APP-NAME', port_forwards=["80:80"],
-   extra_pod_selectors=[{'carto.run/workload-name': 'APP-NAME', 'app.kubernetes.io/component': 'run'}])
+k8s_resource(APP_NAME, port_forwards=["80:80"],
+   extra_pod_selectors=[{'carto.run/workload-name': APP_NAME, 'app.kubernetes.io/component': 'run'}])
