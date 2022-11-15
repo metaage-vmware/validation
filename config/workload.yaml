@@ -8,6 +8,9 @@ metadata:
     apps.tanzu.vmware.com/workload-type: web
 spec:
   params:
+    - name: annotations
+      value:
+        autoscaling.knative.dev/minScale: "1"
     - name: debug
       value: "false"
   resources:
@@ -16,6 +19,6 @@ spec:
       memory: 512Mi
   source:
     git:
-      url: https://github.com/metaage-vmware/validation.git
       ref:
         branch: master
+      url: https://github.com/metaage-vmware/validation.git

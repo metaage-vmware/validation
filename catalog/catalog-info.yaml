@@ -2,9 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: validation-v1
+  namespace: default
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=validation-v1'
 spec:
   type: service
   lifecycle: experimental
-  owner: team-a
+  owner: default-team
