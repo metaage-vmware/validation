@@ -15,8 +15,11 @@ spec:
       value: "false"
   resources:
     limits:
-      cpu: 500m
+      cpu: 1000m
       memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
   source:
     git:
       ref:
