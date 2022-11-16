@@ -4,7 +4,7 @@ $APPNAME = "validation"
 $NAME = "$APPNAME-$API_VERSION"
 $PORT = 80
 
-$IMAGE_SERVER = "harbor.sysage.com.tw/test/validation"
+$IMAGE_SERVER = "harbor.metaage.tech/test/validation"
 $VERSION = "1.0"
 $IMAGE = "$IMAGE_SERVER`:$VERSION"
 

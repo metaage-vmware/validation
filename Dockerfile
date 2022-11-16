@@ -1,4 +1,4 @@
-FROM harbor.sysage.com.tw/base/core
+FROM harbor.metaage.tech/base/core
 
 COPY target/validation.jar /root
 # if you want to prevent zombei proccess, try to uncomment next line.

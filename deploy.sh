@@ -5,7 +5,7 @@ export APPNAME=validation
 export NAME=${APPNAME}-${API_VERSION}
 export PORT=80
 
-export IMAGE_SERVER=harbor.sysage.com.tw/test/validation
+export IMAGE_SERVER=harbor.metaage.tech/test/validation
 export VERSION=1.0
 export IMAGE=$IMAGE_SERVER:$VERSION
 
