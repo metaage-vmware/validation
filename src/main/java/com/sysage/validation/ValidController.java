@@ -21,7 +21,7 @@ import javax.validation.Valid;
 public class ValidController {
     @GetMapping({"/", ""})
     public String index() {
-        return "validation server up!";
+        return "Validation server up!";
     }
 
     @PostMapping("/test")
