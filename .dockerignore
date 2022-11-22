@@ -4,8 +4,8 @@
 *.iml
 .gitignore
 
-src
-pom.xml
+#src
+#pom.xml
 template.yaml
 
 target/
