@@ -12,7 +12,7 @@ spec:
       value:
         autoscaling.knative.dev/minScale: "1"
     - name: gitops_ssh_secret
-      value: gitlab-metaage-auth
+      value: github-auth
     - name: dockerfile
       value: ./Dockerfile
     - name: debug
