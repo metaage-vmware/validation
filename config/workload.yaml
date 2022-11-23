@@ -28,4 +28,4 @@ spec:
     git:
       ref:
         branch: master
-      url: https://gitlab.sysage.com.tw/training/sample/validation.git
+      url: https://github.com/metaage-vmware/validation.git
