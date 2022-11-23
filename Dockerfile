@@ -15,8 +15,9 @@ RUN mvn -ntp -B package spring-boot:repackage -Dmaven.wagon.http.ssl.insecure=tr
 
 # docker build
 FROM harbor.metaage.tech/base/core:jre-11 AS runtime
-COPY --from=build /app/target/validation.jar /root
+RUN mkdir -p /app
+COPY --from=build /app/target/validation.jar /app
 # if you want to prevent zombei proccess, try to uncomment next line.
 # RUN apk set ENTRYPOINT [--no-cache, tini, ...]
 
-ENTRYPOINT java -jar /root/validation.jar
+ENTRYPOINT java -jar /app/validation.jar
