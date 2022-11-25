@@ -1,23 +1,21 @@
 # maven build
 FROM maven:3-jdk-11-slim AS build
-
-ENV HOME=/app
-RUN mkdir -p $HOME
-WORKDIR app
+ENV SKIP_SSL="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true"
+WORKDIR /source
 
 # resolve maven dependency download to cache layer
-ADD ./pom.xml $HOME
-RUN mvn -ntp -B dependency:go-offline -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+ADD ./pom.xml ./
+RUN mvn -ntp -B dependency:go-offline $SKIP_SSL
 # package srping app
-ADD ./src $HOME/src
+ADD ./src ./src
 #RUN echo "$MAVEN_CONFIG"
-RUN mvn -ntp -B package spring-boot:repackage -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+RUN mvn -ntp -B -DskipTests package $SKIP_SSL
 
 # docker build
 FROM harbor.metaage.tech/base/core:jre-11 AS runtime
-RUN mkdir -p /app
-COPY --from=build /app/target/validation.jar /app
+ENV APP_HOME=/app
+COPY --from=build /source/target/validation.jar ./app.jar
 # if you want to prevent zombei proccess, try to uncomment next line.
 # RUN apk set ENTRYPOINT [--no-cache, tini, ...]
 
-ENTRYPOINT java -jar /app/validation.jar
+ENTRYPOINT java -jar ./app.jar
