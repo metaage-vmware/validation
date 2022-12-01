@@ -20,7 +20,7 @@
     <repositories>
         <repository>
             <id>public</id>
-            <url>https://nexus.sysage.com.tw/repository/maven-public/</url>
+            <url>https://nexus.metaage.tech/repository/maven-public/</url>
             <releases>
                 <updatePolicy>always</updatePolicy>
             </releases>
