@@ -2,7 +2,7 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: validation-v1
-  namespace: default
+  namespace: tap-dev
   labels:
     app.kubernetes.io/part-of: validation-v1
     apps.tanzu.vmware.com/has-tests: "true"

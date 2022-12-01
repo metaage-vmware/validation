@@ -1,4 +1,4 @@
-$NAMESPACE = "test"
+$NAMESPACE = "tap-dev"
 $API_VERSION = "v1"
 $APPNAME = "validation"
 $NAME = "$APPNAME-$API_VERSION"

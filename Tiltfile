@@ -1,6 +1,6 @@
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dy-harbor.sysage.com.tw/tap-tkgm/apps/validation-v1-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='default')
+NAMESPACE = os.getenv("NAMESPACE", default='tap-dev')
 OUTPUT_TO_NULL_COMMAND = os.getenv("OUTPUT_TO_NULL_COMMAND", default=' > /dev/null ')
 
 k8s_custom_deploy(
