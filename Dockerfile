@@ -16,5 +16,5 @@ ENV APP_HOME=/app
 COPY --from=build /source/target/validation.jar ./app.jar
 # if you want to prevent zombei proccess, try to uncomment next line.
 # RUN apk set ENTRYPOINT [--no-cache, tini, ...]
-
+RUN apk update && apk upgrade
 ENTRYPOINT java -jar ./app.jar
