@@ -11,10 +11,10 @@ ADD ./src ./src
 RUN mvn -ntp -B -DskipTests package
 
 # docker build
-FROM harbor.metaage.tech/base/core:jre-11 AS runtime
+FROM harbor.metaage.tech/test/core:jre-11-azul AS runtime
+
 ENV APP_HOME=/app
 COPY --from=build /source/target/validation.jar ./app.jar
 # if you want to prevent zombei proccess, try to uncomment next line.
 # RUN apk set ENTRYPOINT [--no-cache, tini, ...]
-RUN apk update && apk upgrade
 ENTRYPOINT java -jar ./app.jar
