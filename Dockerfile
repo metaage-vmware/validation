@@ -11,7 +11,7 @@ ADD ./src ./src
 RUN mvn -ntp -B -DskipTests package
 
 # docker build
-FROM harbor.metaage.tech/test/core:jre-11-mcr AS runtime
+FROM harbor.metaage.tech/test/core:jre-11-azul AS runtime
 
 ENV APP_HOME=/app
 COPY --from=build /source/target/validation.jar ./app.jar
