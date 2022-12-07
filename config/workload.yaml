@@ -5,8 +5,9 @@ metadata:
   namespace: tap-dev
   labels:
     app.kubernetes.io/part-of: validation-v1
-    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
+    apis.apps.tanzu.vmware.com/register-api: "true"
 spec:
   params:
     - name: annotations
@@ -18,6 +19,14 @@ spec:
       value: ./Dockerfile
     - name: debug
       value: "false"
+    - name: api_descriptor
+      value:
+        type: openapi
+        location:
+          path: "/v3/api-docs"
+        system: demo
+        owner: default-team
+        description: validation api demo
   #  resources:
   #    limits:
   #      cpu: 1000m
