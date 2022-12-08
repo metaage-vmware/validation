@@ -23,6 +23,7 @@ spec:
       value:
         type: openapi
         location:
+          baseUrl: http://validation-v1.tap-dev
           path: "/v3/api-docs"
         system: yelb
         owner: guest
