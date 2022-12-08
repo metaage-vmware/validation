@@ -24,8 +24,8 @@ spec:
         type: openapi
         location:
           path: "/v3/api-docs"
-        system: demo
-        owner: default-team
+        system: yelb
+        owner: guest
         description: validation api demo
   #  resources:
   #    limits:

@@ -19,11 +19,22 @@ import javax.validation.Valid;
 @Validated
 @RestController
 public class ValidController {
+    /**
+     * Server status
+     *
+     * @return server default message
+     */
     @GetMapping({"/", ""})
     public String index() {
         return "Validation server up!";
     }
 
+    /**
+     * Test data model with valid
+     *
+     * @param body request data model
+     * @return data model
+     */
     @PostMapping("/test")
     public String test(@RequestBody @Valid RequestModel<DataModel> body) {
         return body.getData().getValue();
