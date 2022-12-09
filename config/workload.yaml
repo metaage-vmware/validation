@@ -25,10 +25,7 @@ spec:
         location:
           path: "/v3/api-docs"
           baseUrl:
-            ref:
-              apiVersion: serving.knative.dev/v1
-              kind: Service
-              name: validation-v1
+            url: http://validation-v1.tap-dev.svc.cluster.local
         system: yelb
         owner: guest
         description: validation api demo
