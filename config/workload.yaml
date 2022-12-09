@@ -24,7 +24,7 @@ spec:
         type: openapi
         location:
           path: "/v3/api-docs"
-          baseUrl:
+          baseURL:
             url: http://validation-v1.tap-dev.svc.cluster.local
         system: yelb
         owner: guest
