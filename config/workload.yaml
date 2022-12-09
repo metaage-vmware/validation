@@ -23,8 +23,12 @@ spec:
       value:
         type: openapi
         location:
-          baseUrl: http://validation-v1.tap-dev
           path: "/v3/api-docs"
+          baseUrl:
+            ref:
+              apiVersion: serving.knative.dev/v1
+              kind: Service
+              name: validation-v1
         system: yelb
         owner: guest
         description: validation api demo
