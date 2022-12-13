@@ -3,9 +3,13 @@ kind: Component
 metadata:
   name: validation-v1
   namespace: tap-dev
+  description: validation api
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=validation-v1'
 spec:
   type: service
   lifecycle: experimental
-  owner: guest
+  owner: team-a
+  system: yelb
+  providesApis:
+    - tap-dev/validation-v1
