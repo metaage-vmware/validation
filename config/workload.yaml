@@ -10,7 +10,6 @@ metadata:
     apis.apps.tanzu.vmware.com/register-api: "true"
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.name: validation-v1
-    tanzu.app.live.view.application.actuator.port: "8080"
     tanzu.app.live.view.application.flavours: spring-boot
 spec:
   params:
