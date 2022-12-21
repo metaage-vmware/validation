@@ -7,7 +7,7 @@ metadata:
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=validation-v1'
 spec:
-  type: service
+  type: web
   lifecycle: experimental
   owner: team-a
   system: yelb
