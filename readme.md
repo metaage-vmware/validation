@@ -33,22 +33,22 @@ kubectl config set-context $CONTEXT_NAME --namespace "NAMESPACE"
     ```
 
     2. Add Git Credentials and assign to `ServiceAccount`。
-       ```shell
-         cat <<EOF | kubectl apply -f -
-           apiVersion: v1
-           kind: Secret
-           metadata:
-             name: git-credential
-             namespace: {YOUR-NAMESPACE}
-             annotations:
-               tekton.dev/git-0: {GIT_HOST_URL}
-           type: kubernetes.io/basic-auth
-           stringData:
-             username: {GIT_ACCOUNT}
-             password: {GIT_PASS}
-         EOF                                                           
-         kubectl patch serviceaccount default --type=json -p '[{"op":"add","path":"/secrets/-","value":{"name": "git-credential"}}]' --namespace YOUR-NAMESPACE
-       ```
+    ```shell
+      cat <<EOF | kubectl apply -f -
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: git-credential
+          namespace: {YOUR-NAMESPACE}
+          annotations:
+            tekton.dev/git-0: {GIT_HOST_URL}
+        type: kubernetes.io/basic-auth
+        stringData:
+          username: {GIT_ACCOUNT}
+          password: {GIT_PASS}
+      EOF                                                           
+      kubectl patch serviceaccount default --type=json -p '[{"op":"add","path":"/secrets/-","value":{"name": "git-credential"}}]' --namespace YOUR-NAMESPACE
+    ```
 
 ## 部屬配置
 
@@ -86,15 +86,15 @@ spec:
         type: openapi
         location:
           path: "/v3/api-docs"
-          baseURL: http://validation-v1.tap-dev.svc.cluster.local
-        system: yelb
-        owner: guest
-        description: validation api demo
+          baseURL: http://{SERVICE-NAME}.{NAMESPACE}.svc.cluster.local
+        system: default-system
+        owner: default-team
+        description: demo
   source:
     git:
       ref:
         branch: master
-      url: https://gitlab.metaage.tech/training/sample/validation.git
+      url: https://www.gitlab.com/training/sample/validation.git
 ```
 
 * 新增一 **secret** 為 **gitlab** 的 **credentials**
