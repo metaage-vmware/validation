@@ -5,8 +5,7 @@ WORKDIR /source
 # resolve maven dependency download to cache layer
 COPY ./target /target
 #RUN echo "$MAVEN_CONFIG"
-RUN mvn -ntp -B -DskipTests package && \
-    mkdir -p target/dependency && \
+RUN mkdir -p target/dependency && \
     (cd target/dependency; jar -xf ../*.jar)
 
 # docker build
