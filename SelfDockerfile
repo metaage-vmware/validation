@@ -3,7 +3,10 @@ FROM maven:3-jdk-11-slim AS build
 WORKDIR /source
 
 # resolve maven dependency download to cache layer
-COPY ./target /target
+ADD ./pom.xml ./
+RUN mvn -ntp -B dependency:go-offline
+# package srping app
+ADD ./src ./src
 #RUN echo "$MAVEN_CONFIG"
 RUN mvn -ntp -B -DskipTests package && \
     mkdir -p target/dependency && \
