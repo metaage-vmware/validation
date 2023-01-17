@@ -3,7 +3,7 @@ FROM maven:3-jdk-11-slim AS build
 WORKDIR /source
 
 # resolve maven dependency download to cache layer
-COPY ./target .
+COPY ./target ./target
 #RUN echo "$MAVEN_CONFIG"
 RUN mkdir -p target/dependency && \
     (cd target/dependency; jar -xf ../*.jar)
