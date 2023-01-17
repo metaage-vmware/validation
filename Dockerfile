@@ -9,7 +9,7 @@ RUN mkdir -p target/dependency && \
     (cd target/dependency; jar -xf ../*.jar)
 
 # docker build
-FROM harbor.metaage.tech/test/core:jre-11-nightly AS runtime
+FROM harbor.metaage.tech/base/core:jre-11-nightly AS runtime
 
 ENV APP_HOME=/app
 ARG DEPENDENCY=/source/target/dependency
