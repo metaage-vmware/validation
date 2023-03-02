@@ -9,7 +9,7 @@ metadata:
 spec:
   type: web
   lifecycle: experimental
-  owner: team-a
-  system: yelb
+  system: demo-tap
+  owner: default-team
   providesApis:
     - tap-dev/validation-v1

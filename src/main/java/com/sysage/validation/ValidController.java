@@ -39,4 +39,15 @@ public class ValidController {
     public String test(@RequestBody @Valid RequestModel<DataModel> body) {
         return body.getData().getValue();
     }
+
+    /**
+     * Test data model with valid
+     *
+     * @param body request data model
+     * @return data model
+     */
+    @PostMapping("/test2")
+    public String test2(@RequestBody @Valid RqBody<DataModel> body) {
+        return body.getData().getValue();
+    }
 }

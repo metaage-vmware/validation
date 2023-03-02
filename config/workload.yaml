@@ -19,7 +19,7 @@ spec:
     - name: gitops_ssh_secret
       value: gitlab-auth
     - name: dockerfile
-      value: ./Dockerfile
+      value: ./SelfDockerfile
     - name: debug
       value: "false"
     - name: api_descriptor
@@ -28,8 +28,8 @@ spec:
         location:
           path: "/v3/api-docs"
           baseURL: http://validation-v1.tap-dev.svc.cluster.local
-        system: yelb
-        owner: guest
+        system: demo-tap
+        owner: default-team
         description: validation api demo
   #  resources:
   #    limits:
