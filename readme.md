@@ -49,6 +49,7 @@ kubectl config set-context $CONTEXT_NAME --namespace "NAMESPACE"
       EOF                                                           
       kubectl patch serviceaccount default --type=json -p '[{"op":"add","path":"/secrets/-","value":{"name": "git-credential"}}]' --namespace YOUR-NAMESPACE
     ```
+    > 如果要設定自簽憑證請設定`caFile`，詳請請參考[Git Repositories | Flux | HTTPS Certificate Authority](https://fluxcd.io/flux/components/source/gitrepositories/#https-certificate-authority)
 
 ## 部屬配置
 
