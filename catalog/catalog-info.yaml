@@ -7,9 +7,9 @@ metadata:
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=validation-v1'
 spec:
-  type: web
+  type: service
   lifecycle: experimental
   system: demo-tap
   owner: default-team
   providesApis:
-    - tap-dev/validation-v1
+    - tap-dev/validation-v1-tkg.vm-metaage.lab
